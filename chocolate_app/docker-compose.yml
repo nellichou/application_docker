@@ -1,0 +1,41 @@
+services:
+  db:
+    image: mariadb:10.0
+    container_name: db
+    networks:
+      - db-app
+    volumes:
+      - vol:/var/lib/mysql
+    env_file:
+      - .env
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - db-app
+      - front-net
+    env_file:
+      - .env
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - front-net
+
+networks:
+  db-app:
+    internal: true
+  front-net:
+
+volumes:
+  vol:

@@ -1,0 +1,59 @@
+.page {
+  display: grid;
+  place-items: center;
+  height: calc(100vh - 5rem);
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 400px;
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 4rem;
+
+    .fieldContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      .label {
+        font-size: 0.7rem;
+        margin-top: 0.5rem;
+        text-transform: uppercase;
+        color: #888;
+      }
+
+      .value {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        padding: 0.5rem;
+        transition: border-color 0.3s;
+        outline: none;
+        resize: none;
+
+        &:focus {
+          border-color: #007bff;
+        }
+      }
+    }
+
+    .submitButton {
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 0.7rem;
+      text-align: center;
+      transition: background-color 0.3s;
+      margin-top: 1rem;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+}

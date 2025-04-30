@@ -1,0 +1,5 @@
+fastapi
+mariadb
+python-dotenv
+pydantic
+uvicorn
